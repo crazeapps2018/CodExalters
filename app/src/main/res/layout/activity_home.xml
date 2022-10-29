@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light"
+    android:fitsSystemWindows="true"
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_200"
+        app:titleTextAppearance="@style/Toolbar.TitleText"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnNext"
+            android:layout_width="@dimen/_17sdp"
+            android:layout_height="@dimen/_17sdp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/ic_details"
+            />
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav_view"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        />
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav_view"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:elevation="@dimen/_20sdp"
+        app:elevation="@dimen/_10sdp"
+        app:itemTextAppearanceActive="@style/BottomNavigationViewTextStyleSelected"
+        app:itemTextAppearanceInactive="@style/BottomNavigationViewTextStyleUnSelected"
+        android:background="@drawable/bottom_shape"
+        app:itemTextColor="@color/bottom_nav_color"
+        app:itemIconTint="@color/bottom_nav_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/menu_bottom_nav" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
